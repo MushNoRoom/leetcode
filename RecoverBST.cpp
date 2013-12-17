@@ -107,3 +107,14 @@ int main()
     return 0;
 }
 
+
+/*!
+	The idea is that the in order traversal always give a increased array. We traverse the BST in order, find out if there is any inversion in the traversal.
+	If there is any inversion, we mark them down. For two elements swapped by mistake, we should have two set of inversions typically.
+	Two pointers are needed, one record previous element and the ohter records the current element during traversal. We compare the previous with current element.
+	If preivous > current, that means an inversion occurs. For the first set of inversion, we record the previous element, i.e. the bigger one.
+	For the second set of inversion, we record the current element, the smaller one. We swap the value of the two recorded nodes.
+	
+	There could be only one inversion two. In this case, only one recording is happenning. The first pointer will not be updated once assigned with a valid node, i.e. a non-NULL node
+*/
+
